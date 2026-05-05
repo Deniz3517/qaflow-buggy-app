@@ -21,7 +21,7 @@
     if (!el) return;
     const items = loadCart();
     const total = items.reduce((a, it) => a + it.qty, 0);
-    el.textContent = "0";
+    el.textContent = total;
     el.style.display = total > 0 ? "inline-flex" : "none";
   }
 
