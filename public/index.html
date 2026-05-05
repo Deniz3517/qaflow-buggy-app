@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SportHub — Gear Up For Greatness</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1 class="app-title">SPORTHUB</h1>
+    </div>
+    <nav class="site-nav">
+      <a href="/index.html" class="nav-link active">Home</a>
+      <a href="/products.html" class="nav-link">Products</a>
+      <a href="/cart.html" class="nav-link">Cart <span class="badge" id="cart-badge">0</span></a>
+      <a href="/login.html" class="nav-link nav-cta">Login</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <span class="eyebrow">NEW SEASON · 2026</span>
+      <h2 class="hero-title">Gear up for greatness.</h2>
+      <p class="hero-sub">Premium running shoes, training gear and team apparel — engineered for athletes.</p>
+      <div class="hero-search">
+        <input id="search" type="text" placeholder="Search shoes, balls, apparel..." />
+        <button id="search-btn" class="btn btn-primary">Search</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="section-head">
+      <h3 class="section-title">Featured</h3>
+      <a href="/products.html" class="section-link">View all →</a>
+    </div>
+    <div class="product-grid" id="featured-grid"></div>
+  </section>
+
+  <section class="container categories">
+    <div class="section-head">
+      <h3 class="section-title">Shop by category</h3>
+    </div>
+    <div class="cat-grid">
+      <a href="/products.html?cat=Running" class="cat-card cat-running">
+        <span class="cat-emoji">👟</span><span class="cat-name">Running</span>
+      </a>
+      <a href="/products.html?cat=Football" class="cat-card cat-football">
+        <span class="cat-emoji">⚽</span><span class="cat-name">Football</span>
+      </a>
+      <a href="/products.html?cat=Basketball" class="cat-card cat-basketball">
+        <span class="cat-emoji">🏀</span><span class="cat-name">Basketball</span>
+      </a>
+      <a href="/products.html?cat=Fitness" class="cat-card cat-fitness">
+        <span class="cat-emoji">🏋</span><span class="cat-name">Fitness</span>
+      </a>
+      <a href="/products.html?cat=Apparel" class="cat-card cat-apparel">
+        <span class="cat-emoji">👕</span><span class="cat-name">Apparel</span>
+      </a>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <span>© 2026 SportHub · Demo store for QAFLOW AI</span>
+  </footer>
+
+  <script src="/data.js"></script>
+  <script src="/app.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      SH.renderCartBadge();
+      SH.renderFeatured("featured-grid");
+    });
+  </script>
+</body>
+</html>

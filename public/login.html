@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login · SportHub</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1 class="app-title">SPORTHUB</h1>
+    </div>
+    <nav class="site-nav">
+      <a href="/index.html" class="nav-link">Home</a>
+      <a href="/products.html" class="nav-link">Products</a>
+      <a href="/cart.html" class="nav-link">Cart <span class="badge" id="cart-badge">0</span></a>
+      <a href="/login.html" class="nav-link active">Login</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="card" id="login-card">
+      <h2 class="card-title">Sign in to your account</h2>
+
+      <form id="login-form" class="login-form" novalidate>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input id="email" name="email" placeholder="you@example.com" required />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input id="password" name="password" type="password" placeholder="••••••••" required />
+        </div>
+
+        <button type="submit" id="login-button" class="login-button">Login</button>
+
+        <p class="form-footer">
+          Don't have an account? <a href="#signup">Create one</a>
+        </p>
+      </form>
+
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <span>© 2026 SportHub</span>
+  </footer>
+
+  <script src="/app.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      SH.renderCartBadge();
+      const form = document.getElementById("login-form");
+      const status = document.getElementById("status");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const email = document.getElementById("email").value.trim();
+        const password = document.getElementById("password").value;
+        if (!email || !password) {
+          status.textContent = "Please fill in both fields.";
+          status.classList.add("error");
+          return;
+        }
+        if (email === "demo@sporthub.com" && password === "demo1234") {
+          status.classList.remove("error");
+          status.classList.add("success");
+          status.textContent = "Welcome back!";
+        } else {
+          status.classList.add("error");
+          status.textContent = "Invalid credentials.";
+        }
+      });
+    });
+  </script>
+</body>
+</html>

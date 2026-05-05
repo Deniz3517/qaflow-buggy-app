@@ -1,0 +1,10 @@
+{
+  "name": "qaflow-buggy-app",
+  "version": "1.0.0",
+  "description": "Sample buggy app for QAFLOW AI demo — contains intentional UI bugs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "license": "MIT"
+}

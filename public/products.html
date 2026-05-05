@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products · SportHub</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <h1 class="app-title">SPORTHUB</h1>
+    </div>
+    <nav class="site-nav">
+      <a href="/index.html" class="nav-link">Home</a>
+      <a href="/products.html" class="nav-link active">Products</a>
+      <a href="/cart.html" class="nav-link">Cart <span class="badge" id="cart-badge">0</span></a>
+      <a href="/login.html" class="nav-link nav-cta">Login</a>
+    </nav>
+  </header>
+
+  <section class="container">
+    <div class="section-head">
+      <h3 class="section-title" id="cat-title">All products</h3>
+      <div class="filter-pills">
+        <a href="/products.html" class="pill" data-cat="all">All</a>
+        <a href="/products.html?cat=Running" class="pill" data-cat="Running">Running</a>
+        <a href="/products.html?cat=Football" class="pill" data-cat="Football">Football</a>
+        <a href="/products.html?cat=Basketball" class="pill" data-cat="Basketball">Basketball</a>
+        <a href="/products.html?cat=Fitness" class="pill" data-cat="Fitness">Fitness</a>
+        <a href="/products.html?cat=Apparel" class="pill" data-cat="Apparel">Apparel</a>
+      </div>
+    </div>
+    <div class="product-grid" id="grid"></div>
+  </section>
+
+  <footer class="site-footer">
+    <span>© 2026 SportHub</span>
+  </footer>
+
+  <script src="/data.js"></script>
+  <script src="/app.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      SH.renderCartBadge();
+      const params = new URLSearchParams(location.search);
+      const cat = params.get("cat") || "all";
+      SH.renderProducts("grid", cat);
+      SH.highlightActivePill(cat);
+      if (cat !== "all") {
+        document.getElementById("cat-title").textContent = cat;
+      }
+    });
+  </script>
+</body>
+</html>
