@@ -374,7 +374,7 @@ button { font-family: inherit; }
 
 /* BUG #3492 — login button misaligned: uses margin-left:12px instead of centering */
 .login-button {
-  display: none;
+  display: block;
   background: #4f46e5;
   color: #ffffff;
   border: none;
