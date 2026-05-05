@@ -119,8 +119,7 @@
     items.forEach((it) => {
       const p = findProduct(it.id);
       if (!p) return;
-      // BUG (manual): subtotal does not multiply by quantity — manual tester to report
-      const lineTotal = p.price;
+      const lineTotal = p.price * it.qty;
       subtotal += lineTotal;
       const row = document.createElement("tr");
       row.innerHTML = `
