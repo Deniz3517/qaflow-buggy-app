@@ -406,7 +406,7 @@ button { font-family: inherit; }
 }
 /* BUG #3494 — error message has poor contrast: dark slate on dark navy */
 .status.error {
-  color: #475569;
+  color: #ef4444;
 }
 .status.success { color: #22c55e; }
 
