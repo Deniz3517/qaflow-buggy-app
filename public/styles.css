@@ -382,7 +382,7 @@ button { font-family: inherit; }
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  margin-left: 12px;
+  margin: 0 auto;
   width: 160px;
   transition: background 0.15s;
 }
